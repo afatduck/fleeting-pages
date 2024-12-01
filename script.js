@@ -216,8 +216,17 @@ class PageItem {
 }
 
 const getFaviconLink = (url) => {
-    const base = new URL(url).origin;
-    const faviconURL = base + '/favicon.ico';
+    try {
+        if (!url.startsWith('http')) {
+            url = 'https://' + url;
+        }
+        const base = new URL(url).origin;
+        const faviconURL = base + '/favicon.ico';
+        return faviconURL;
+    }
+    catch (e) {
+        return fallBackIcon;
+    }
 }
 
 const fallBackIcon = "./favicon.png";
