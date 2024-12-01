@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleeting Pages</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./favicon.png" type="image/png">
+</head>
+<body>
+    <canvas></canvas>
+    <button id="add">Pages</button>
+    <div id="popup" class="hidden">
+        <div>
+            <span id="close"></span>
+            <h3>My Pages</h3>
+            <ul>
+                <p>
+                    You have no pages saved.
+                </p>
+            </ul>
+            <form>
+                <label for="add-url">
+                    Url:
+                    <input type="text" title="url" id="add-url" placeholder="url">
+                </label>
+                <label for="add-title">
+                    Title:
+                    <input type="text" title="title" id="add-title" placeholder="title">
+                </label>
+                <label for="add-icon">
+                    Icon url:
+                    <input type="text" title="icon" id="add-icon" placeholder="icon url">
+                </label>
+                <p class="note">
+                    You can try adding the website without the icon url, add manually if it doesn't show up.
+                </p>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+    <script src="./script.js" defer></script>
+</body>
+</html>

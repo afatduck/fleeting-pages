@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+    /* Prod */
+    --bg-url: url("./image/");
+
+    /* Dev */
+    /* --bg-url: url("http://localhost:8383/image"); */
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    backdrop-filter: blur(20px) brightness(.7);
+    font-family: 'Outfit', sans-serif;
+    background-image: var(--bg-url);
+}
+
+#add {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: block;
+    background-image: var(--bg-url);
+    color: black;
+    overflow: hidden;
+    text-shadow: #fff8 0 0 5px;
+    border-width: 2px;
+}
+
+#add::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: var(--bg-url);
+    background-size: cover;
+    filter: blur(10px) brightness(1.2);
+}
+
+#add:hover {
+    filter: brightness(.9);
+}
+
+#popup {
+    background-color: #0008;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup > div {
+    background-color: #e5e5e5;
+    position: relative;
+    box-sizing: border-box;
+    padding: 4rem;
+    border-radius: 4px;
+    width: min(30rem, 90vw);
+}
+
+#popup #close {
+    width: 1rem;
+    background-image: url('./close.png');
+    background-size: contain;
+    top: 1rem;
+    right: 1rem;
+    display: block;
+    aspect-ratio: 1;
+    position: absolute;
+    cursor: pointer;
+}
+
+#popup input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: .5rem;
+    margin: .5rem 0;
+    /* Copilot make them nce and stuff */
+    border: 1px solid #000;
+    border-radius: 4px;
+}
+
+#popup label {
+    display: block;
+    font-weight: 700;
+    font-size: small;
+}
+
+#popup h3 {
+    margin-top: 0;
+}
+
+#popup button {
+    margin: .5rem 0;
+    margin-left: auto;
+}
+
+#popup ul p {
+    opacity: .5;
+    font-size: small;
+}
+
+#popup ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    max-height: 20vh;
+    overflow-y: auto;
+}
+
+#popup li {
+    display: flex;
+    align-items: center;
+    margin: none;
+    padding: none;
+    gap: 1rem;
+    border-bottom: 1px solid #0002;
+    box-sizing: border-box;
+    padding: .5rem;
+}
+
+#popup li:last-child {
+    border-bottom: none;
+}
+
+#popup li i {
+    background-image: url('./close.png');
+    background-size: contain;
+    display: block;
+    width: .5rem;
+    height: .5rem;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+button {
+    padding: .5rem 1rem;
+    border: 1px solid #000;
+    border-radius: 4px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: .7rem;
+    display: block;
+}
+
+.note {
+    font-weight: 300;
+    font-size: small;
+    opacity: .5;
+}
+
+.hidden {
+    display: none !important;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
